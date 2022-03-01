@@ -86,16 +86,18 @@ function checkGuess(){
         correct+=1;
         alert("You got it right")
         out.innerHTML = correct
+        if(correct >3){
+            lock();
+       }
+      
     } else {
         wrong+=1;
        alert("Wrong President")
         out.innerHTML = wrong
     }
 }
-if(correct >3){
-     
-  document.getElementById("but1").onclick=lock();
-    }
+
+
 
     function lock(){
             alert("Sorry, game over.");
