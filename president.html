@@ -16,6 +16,10 @@
 </form>
 
 <p id="result"></p>
+<br>
+<div clas="container">
+    <img  src="dove.jpg" alt="Dove" height="100" width="100" id="imageChg" onclick="swapImage()" value=1>
+</div>
 
 
 
@@ -23,6 +27,26 @@
 
 var correct=0;
 var wrong=0;
+var useImage=1;
+
+function  swapImage(){
+
+switch (useImage) {
+    case 1:
+      s= document.getElementById("imageChg").src="Abotbab.jpg";
+      useImage=2;
+      break;
+    case 2:
+    s= document.getElementById("imageChg").src="huming.jpg"
+      useImage=3
+        break;
+    case 3:
+    s= document.getElementById("imageChg").src="Dove.jpg"
+      useImage=1
+        break;
+}}
+
+
 
 function checkGuess(){
     console.log("Getting form values")
