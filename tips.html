@@ -20,6 +20,20 @@
 
 
 <p id="result">This text will be replaced </p>
+<br>
+<form>
+    <input type="radio" id="radio_1" name="radio_1" value="times" onclick="chooseOp()">
+    <label for="radio_1">*</label></br>
+
+    <input type="radio" id="radio_2" name="radio_1" onclick="chooseOp()" value="divide">
+    <label for="radio_2">/</label></br>
+
+    <input type="radio" id="radio_3" name="radio_1" onclick="chooseOp()" value="exponent">
+    <label for="radio_3">**</label></br>
+
+</form>
+
+<p id="results">operation result</p>
 
 <script> 
 
@@ -30,7 +44,7 @@ function tips() {
             var result = "Tip amounts "
             result = "Tip amounts by increase of " + tip + " are:"
 
-            var sum = amount * 0.1
+            var sum = amount *  0.1
             result += sum + 0.0
 
             for (let i = 0; i < 9; i++) {
@@ -40,7 +54,25 @@ function tips() {
             }
             document.getElementById('result').innerHTML = result
         }
+        function chooseOp() {
+            var amount = document.getElementById("check").value
+            var tip = document.getElementById("tip").value
+            exponent = document.getElementById("radio_3").checked
+            times = document.getElementById("radio_1").checked
+            divide = document.getElementById("radio_2").checked
 
+            if (exponent) {
+                document.getElementById('results').innerHTML = "(amount ** Tip) value is:" + amount ** tip
+            }
+
+            else if (times) {
+                document.getElementById('results').innerHTML = "(amount * Tip) value is:" + amount * tip
+            }
+            else if (divide) {
+
+                document.getElementById('results').innerHTML = "(amount / Tip) value is:" + amount / tip
+            }
+        }
       
 
 </script>
