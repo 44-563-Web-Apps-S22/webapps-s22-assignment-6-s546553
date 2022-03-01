@@ -1,7 +1,33 @@
 <!DOCTYPE html>
 <html>
  
-<head><title>PRESIDENT</title></head>
+<head><title>PRESIDENT</title>
+  <style>
+    label {
+        display: inline-block;
+        width: 175px;
+    }
+    
+    p {
+        background-color: rgb(144, 227, 241);
+        color: black;
+        display: inline;
+    }
+    
+    p:hover {
+        background-color: rgb(233, 127, 101);
+        color: black;
+        display: inline;
+    }
+    
+    h2 {
+        background-color: rgb(228, 80, 203);
+        color: rgb(15, 2, 6);
+        display: inline-block;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    </style>
+</head>
 <body>
 
 <h2>Abhishek Dharamkar Ramesh</h2>
@@ -13,7 +39,7 @@
     <label for="form1_guess">Guess the president</label>
     <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" onclick="checkGuess()" id="but1" value="Check the guess">
 </form>
 
 <p id="result"></p>
@@ -66,7 +92,13 @@ function checkGuess(){
         out.innerHTML = wrong
     }
 }
+if(correct == 3){
+        document.getElementById("but1").onclick = lock
+    }
 
+    function lock(){
+            alert("Sorry, game over.")
+        }
 
 </script>
 
