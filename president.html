@@ -92,12 +92,14 @@ function checkGuess(){
         out.innerHTML = wrong
     }
 }
-if(correct == 3){
-        document.getElementById("but1").onclick = lock
+if(correct >3){
+     
+  document.getElementById("but1").onclick=lock();
     }
 
     function lock(){
-            alert("Sorry, game over.")
+            alert("Sorry, game over.");
+            correct=0;
         }
 
 </script>
